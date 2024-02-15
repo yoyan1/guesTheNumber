@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+    @keyframes type-erase {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: type-erase 1s;
+    }
+
+    embed{
+      position: fixed;
+      width: 0;
+      height: 0;     
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    
+  </div>
+  <embed src="./ohaha.mp3">
+  <script>
+  alert("Gues the number to see magic😉");
+  let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+  while(randomNumber){
+
+    let input = prompt("Enter a Number 1-100");
+    let randomText = Math.floor(Math.random() * 3);
+
+    if(input == ""){
+      alert("butangi sab uy")
+    } else{
+      if(input <= 0 || input >100){
+        alert("1-100 ra tas ibutang  kay " + input + "katulog sa uy");
+      }
+      else if(input > randomNumber){
+        let text = ["Try again, too big", "Less than "+input, "Lower!"];
+        alert(text[randomText]);
+      }
+      else if(input < randomNumber){
+        let text = ["Try again, too small", "more than "+input, "Higher!"];
+        alert(text[randomText]);
+      }
+      else if(input == randomNumber){
+        alert("Congratulation🤞 "+ input + " is the correct number");
+        alert("click ok to see magic");
+        let textArea = document.querySelector(".container");
+        setTimeout(() => {
+          document.querySelector("embed").style.display = 'block';
+          setTimeout(() => {
+            textArea.innerHTML = "<h3>Daghan nag ingon sa akoa ba nga</h3>";
+            setTimeout(() => {
+              textArea.innerHTML = "<h3><br> pangit gd daw kayko</h3>"
+              setTimeout(() => {
+                textArea.innerHTML = "<h3><br> pangit jud bitw ko <br></h3>";
+                setTimeout(() => {
+                  let count = 2;
+                  textArea.innerHTML = " pangit!";
+                  let set =  setInterval(() => {
+                              count-=1;
+                              textArea.innerHTML += " pangit!";
+                              if(count <= 0){
+                                stop();
+                              } else{
+          
+                              }
+                              
+                            }, 1200)
+                    function stop(){
+                      clearInterval(set);
+                      setTimeout(() =>{
+                        textArea.innerHTML = "<h3><br> pangitaonong tawo kay grabe ka lami na <br></hr>";
+                        setTimeout(() =>{
+                          textArea.innerHTML = "<h3>tarung pa jud kaayu <br></h3>";
+                          setTimeout(() =>{
+                            textArea.innerHTML = "<h3>OHAHAH</h3>";
+                            setTimeout(() =>{
+                              textArea.innerHTML = "<h3>Just for Fun mwuah</h3>";
+                            }, 2000)
+                          }, 2000)
+                        }, 2500)
+                      }, 2300)
+                    }
+                }, 2000)
+              }, 2500)
+            }, 2000)
+          }, 1000)
+        },100)
+        break;
+      }
+      else if(!Number(input)){
+        alert("number ra uy")
+      }
+    }
+  
+  }
+    
+  </script>
+</body>
+
+</html>
