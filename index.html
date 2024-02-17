@@ -26,7 +26,9 @@
       white-space: nowrap;
       animation: type-erase 1s;
     }
-
+    embed{
+      visibility:hidden;
+    }
 
     
   </style>
@@ -36,7 +38,7 @@
   <div class="container">
     
   </div>
-  <embed src="./ohaha.mp3">
+  <embed src="./ohaha.mp3" type="audio/mp3" autoplay="true">
   <script>
   alert("Gues the number to see magic😉");
   let randomNumber = Math.floor(Math.random() * 100) + 1;
